@@ -16,5 +16,14 @@ namespace Pool_Club_Project
         {
             InitializeComponent();
         }
+
+        private void playTable1_TableCompleted(object sender, PlayTable.TableCompletedEventArgs e)
+        {
+            string tableName = ((PlayTable)sender).Name;
+
+            string message = $"Total Fees = {((float)e.TotalFees)}, Total Time = {e.TotalTime}";
+
+            MessageBox.Show($"{tableName} is Completed.\n{message}");
+        }
     }
 }
